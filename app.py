@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, request
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
 from flask_migrate import Migrate
 from sqlalchemy.exc import IntegrityError
@@ -9,6 +10,7 @@ from models import bcrypt, db, User, Workout
 from validation import workout_error
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'local-development-key-change-before-deploying')

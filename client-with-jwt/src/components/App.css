@@ -1,0 +1,14 @@
+.session-loading {
+  margin: 3rem auto;
+  color: #536176;
+  text-align: center;
+}
+
+.session-error {
+  max-width: 500px;
+  margin: 1rem auto 0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: #fff0f1;
+  color: #a3202c;
+}
